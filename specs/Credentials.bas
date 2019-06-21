@@ -31,14 +31,15 @@ End Property
 Function Load() As Dictionary
     Dim Line As String
     Dim Header As String
-    Dim Parts As Variant
+    Dim Parts As Varidant
     Dim Key As String
     Dim Value As String
     
     Set pCredentials = New Dictionary
-    Open CredentialsPath For Input As #1
     
     On Error GoTo ErrorHandling
+    Open CredentialsPath For Input As #1
+    
     Do While Not VBA.EOF(1)
         Line Input #1, Line
         Line = VBA.Replace(Line, vbNewLine, "")
